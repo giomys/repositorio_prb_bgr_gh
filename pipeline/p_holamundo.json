@@ -1,0 +1,23 @@
+{
+	"name": "p_holamundo",
+	"properties": {
+		"activities": [
+			{
+				"name": "establecer salud",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "var1",
+					"value": "hola data factory de prueba Giomy"
+				}
+			}
+		],
+		"variables": {
+			"var1": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
