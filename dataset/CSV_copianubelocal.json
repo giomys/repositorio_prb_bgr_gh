@@ -1,0 +1,22 @@
+{
+	"name": "CSV_copianubelocal",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_FileServerClase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "copianubelocal.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
