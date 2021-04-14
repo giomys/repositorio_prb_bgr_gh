@@ -1,0 +1,10 @@
+{
+	"name": "ls_KeyVaultClase3",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-futuroinfo-noprod.vault.azure.net/"
+		}
+	}
+}
