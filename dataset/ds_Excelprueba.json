@@ -1,0 +1,20 @@
+{
+	"name": "ds_Excelprueba",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_FileServerClase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Hoja1",
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "PruebaDF.xlsx"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
