@@ -60,6 +60,16 @@
 				]
 			}
 		],
+		"parameters": {
+			"año": {
+				"type": "string",
+				"defaultValue": "0"
+			},
+			"mes": {
+				"type": "string",
+				"defaultValue": "0"
+			}
+		},
 		"folder": {
 			"name": "Clase04"
 		},
