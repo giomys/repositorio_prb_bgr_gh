@@ -44,7 +44,32 @@
 					"items": {
 						"value": "@array(activity('RangoFechas').output.value)",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "PL_copiaIncremental",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "PL_copiaIncremental",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"año": {
+										"value": "@item.anioCorte",
+										"type": "Expression"
+									},
+									"mes": {
+										"value": "@item().mesCorte",
+										"type": "Expression"
+									}
+								}
+							}
+						}
+					]
 				}
 			}
 		],
