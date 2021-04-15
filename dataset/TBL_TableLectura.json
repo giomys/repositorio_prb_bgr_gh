@@ -5,6 +5,9 @@
 			"referenceName": "ls_SqlDatabaseNube",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Clase4"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": []
