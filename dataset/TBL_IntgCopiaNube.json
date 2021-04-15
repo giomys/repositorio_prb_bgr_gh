@@ -1,0 +1,15 @@
+{
+	"name": "TBL_IntgCopiaNube",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_SqlDatabaseNube",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Clase3"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
