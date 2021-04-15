@@ -5,6 +5,14 @@
 			"referenceName": "ls_DataLakeStorage",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Directorio": {
+				"type": "string"
+			},
+			"Nombre_Archivo": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "Clase4"
 		},
@@ -13,6 +21,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().Nombre_Archivo",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().Directorio",
+					"type": "Expression"
+				},
 				"fileSystem": "aci-gaherrer"
 			},
 			"columnDelimiter": ",",
