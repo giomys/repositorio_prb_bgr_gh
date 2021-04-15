@@ -1,0 +1,119 @@
+{
+	"name": "PL_CopiaTablaLocalANube_Mapeo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT nombres as nombre1, apellidos as apellido1 FROM dbo.IntegrantesF",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "String",
+									"physicalType": "nchar"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String",
+									"physicalType": "nchar"
+								}
+							},
+							{
+								"source": {
+									"name": "nombres",
+									"type": "String",
+									"physicalType": "nchar"
+								},
+								"sink": {
+									"name": "nombres",
+									"type": "String",
+									"physicalType": "nchar"
+								}
+							},
+							{
+								"source": {
+									"name": "apellidos",
+									"type": "String",
+									"physicalType": "nchar"
+								},
+								"sink": {
+									"name": "apellidos",
+									"type": "String",
+									"physicalType": "nchar"
+								}
+							},
+							{
+								"source": {
+									"name": "edad",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "edad",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "alias_familia",
+									"type": "String",
+									"physicalType": "nchar"
+								},
+								"sink": {
+									"name": "alias_familia",
+									"type": "String",
+									"physicalType": "nchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "TBL_IntegratesF",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "TBL_IntgCopiaNube",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Clase3"
+		},
+		"annotations": []
+	}
+}
