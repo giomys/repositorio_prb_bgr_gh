@@ -27,6 +27,25 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "RangoFechas",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@array(activity('RangoFechas').output.value)",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"folder": {
