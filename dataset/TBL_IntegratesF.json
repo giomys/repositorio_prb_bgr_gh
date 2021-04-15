@@ -1,0 +1,19 @@
+{
+	"name": "TBL_IntegratesF",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_SqlServerGH",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Clase3"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "IntegrantesF"
+		}
+	}
+}
