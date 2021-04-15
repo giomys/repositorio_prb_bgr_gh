@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
+				"name": "RangoFechas",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -13,7 +13,19 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "DECLARE @MinDate DATE = '2009-01-01',         @MaxDate DATE = '2009-05-01';  SELECT CONVERT(varchar,fechaCorte,23) AS fechaCorte, MONTH(fechaCorte) as mesCorte, YEAR(fechaCorte) as anioCorte FROM ( \tSELECT   \tTOP (DATEDIFF(MONTH, @MinDate, @MaxDate) + 1) \tfechaCorte = EOMONTH(DATEADD(MONTH, ROW_NUMBER() OVER(ORDER BY a.object_id) - 1, @MinDate))\n\tFROM    sys.all_objects a \n\tCROSS JOIN sys.all_objects b\n)fechas\nORDER BY fechaCorte;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "TBL_TableLectura",
+						"type": "DatasetReference"
+					}
+				}
 			}
 		],
 		"folder": {
