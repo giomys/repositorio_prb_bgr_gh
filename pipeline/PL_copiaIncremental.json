@@ -51,7 +51,11 @@
 				"outputs": [
 					{
 						"referenceName": "CSV_Escribir",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Directorio": "Factura/2019/01",
+							"Nombre_Archivo": "Factura01.csv"
+						}
 					}
 				]
 			}
