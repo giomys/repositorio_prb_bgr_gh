@@ -1,0 +1,25 @@
+{
+	"name": "CSV_Escribir",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_DataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Clase4"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "aci-gaherrer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
