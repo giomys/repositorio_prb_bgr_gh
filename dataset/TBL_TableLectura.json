@@ -1,0 +1,12 @@
+{
+	"name": "TBL_TableLectura",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_SqlDatabaseNube",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
