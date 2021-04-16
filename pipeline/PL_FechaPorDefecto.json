@@ -1,0 +1,34 @@
+{
+	"name": "PL_FechaPorDefecto",
+	"properties": {
+		"activities": [
+			{
+				"name": "SetFechaCorteVar",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FechaCorteVar",
+					"value": {
+						"value": "@coalesce(pipeline().parameters.FechaCorte, utcnow())",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"FechaCorte": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"FechaCorteVar": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Clase Asincronica"
+		},
+		"annotations": []
+	}
+}
