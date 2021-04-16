@@ -1,0 +1,52 @@
+{
+	"name": "PL_UsoSwitch",
+	"properties": {
+		"activities": [
+			{
+				"name": "Switch1",
+				"type": "Switch",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "@pipeline().parameters.Bandera",
+						"type": "Expression"
+					},
+					"cases": [
+						{
+							"value": "A"
+						},
+						{
+							"value": "B"
+						},
+						{
+							"value": "C"
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"Bandera": {
+				"type": "string"
+			},
+			"Numero1": {
+				"type": "int",
+				"defaultValue": 20
+			},
+			"Numero2": {
+				"type": "int",
+				"defaultValue": 5
+			}
+		},
+		"variables": {
+			"Mensaje": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Clase Asincronica"
+		},
+		"annotations": []
+	}
+}
