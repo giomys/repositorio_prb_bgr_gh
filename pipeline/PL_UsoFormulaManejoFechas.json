@@ -74,6 +74,26 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "SetFechaFinMes",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "SetFechaSumaPeriodo",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FechaFinMes",
+					"value": {
+						"value": "@addToTime(variables('FechaSumaPeriodo'),-1,'Day')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
@@ -87,6 +107,9 @@
 				"type": "String"
 			},
 			"FechaSumaPeriodo": {
+				"type": "String"
+			},
+			"FechaFinMes": {
 				"type": "String"
 			}
 		},
