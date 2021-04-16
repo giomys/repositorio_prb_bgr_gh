@@ -30,7 +30,7 @@
 				"typeProperties": {
 					"variableName": "FechaFormatoPerzonalizado",
 					"value": {
-						"value": "@formatDateTime(variables('FechaActual'),'yyyy/mm/dd')",
+						"value": "@formatDateTime(variables('FechaActual'),'yyyy/MM/dd')",
 						"type": "Expression"
 					}
 				}
