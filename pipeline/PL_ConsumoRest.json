@@ -18,8 +18,33 @@
 					"url": "http://worldclockapi.com/api/json/utc/now",
 					"method": "GET"
 				}
+			},
+			{
+				"name": "SetDayOfTheWeek",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "ConsultarHoraUniversal",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "dayOfTheWeek",
+					"value": {
+						"value": "@activity('ConsultarHoraUniversal').output.dayOfTheWeek",
+						"type": "Expression"
+					}
+				}
 			}
 		],
+		"variables": {
+			"dayOfTheWeek": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "Clase Asincronica"
 		},
