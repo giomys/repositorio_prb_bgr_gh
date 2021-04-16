@@ -22,8 +22,7 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate"
+						"type": "AzureSqlSink"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -31,19 +30,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "id",
-									"type": "String",
-									"physicalType": "nchar"
-								},
-								"sink": {
-									"name": "id",
-									"type": "String",
-									"physicalType": "nchar"
-								}
-							},
-							{
-								"source": {
-									"name": "nombres",
+									"name": "nombre1",
 									"type": "String",
 									"physicalType": "nchar"
 								},
@@ -55,7 +42,7 @@
 							},
 							{
 								"source": {
-									"name": "apellidos",
+									"name": "apellido1",
 									"type": "String",
 									"physicalType": "nchar"
 								},
@@ -66,11 +53,13 @@
 								}
 							},
 							{
-								"source": {
-									"name": "edad",
-									"type": "Int32",
-									"physicalType": "int"
-								},
+								"sink": {
+									"name": "apellidos",
+									"type": "String",
+									"physicalType": "nchar"
+								}
+							},
+							{
 								"sink": {
 									"name": "edad",
 									"type": "Int32",
@@ -78,11 +67,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "alias_familia",
-									"type": "String",
-									"physicalType": "nchar"
-								},
 								"sink": {
 									"name": "alias_familia",
 									"type": "String",
