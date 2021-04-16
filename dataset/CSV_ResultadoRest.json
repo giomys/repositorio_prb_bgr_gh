@@ -14,7 +14,7 @@
 				"folderPath": "Results",
 				"fileSystem": "aci-gaherrer"
 			},
-			"columnDelimiter": "|",
+			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
