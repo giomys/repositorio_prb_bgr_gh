@@ -3,10 +3,37 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Set variable1",
+				"name": "SetFechaActual",
 				"type": "SetVariable",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FechaActual",
+					"value": {
+						"value": "@utcnow()",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "SetFormatoFecha",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "SetFechaActual",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FechaFormatoPerzonalizado",
+					"value": {
+						"value": "@formatDateTime(variables('FechaActual'),'yyyy/mm/dd')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
