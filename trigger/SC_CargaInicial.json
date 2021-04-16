@@ -1,0 +1,35 @@
+{
+	"name": "SC_CargaInicial",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_carga_rango_fechas",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Month",
+				"interval": 1,
+				"startTime": "2021-04-16T17:34:00",
+				"timeZone": "SA Pacific Standard Time",
+				"schedule": {
+					"minutes": [
+						40
+					],
+					"hours": [
+						17
+					],
+					"monthDays": [
+						16
+					]
+				}
+			}
+		}
+	}
+}
