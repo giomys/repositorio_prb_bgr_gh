@@ -1,0 +1,65 @@
+{
+	"name": "PL_UsoWait",
+	"properties": {
+		"activities": [
+			{
+				"name": "WaitEsperar",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "SetInicio",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 25
+				}
+			},
+			{
+				"name": "SetInicio",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "mensaje",
+					"value": {
+						"value": "@utcnow()",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "WaitEsperar",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "mensaje",
+					"value": {
+						"value": "@utcnow()",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"mensaje": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Clase Asincronica"
+		},
+		"annotations": []
+	}
+}
