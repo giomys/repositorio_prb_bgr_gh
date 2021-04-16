@@ -1,0 +1,12 @@
+{
+	"name": "ls_RestService",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "http://worldclockapi.com/api/json/utc/now",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
