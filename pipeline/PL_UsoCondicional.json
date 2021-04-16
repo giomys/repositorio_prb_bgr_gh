@@ -1,0 +1,64 @@
+{
+	"name": "PL_UsoCondicional",
+	"properties": {
+		"activities": [
+			{
+				"name": "IfVerificarParImpar",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(mod(pipeline().parameters.Numero,2),0)",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "SetResultadoImpar",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Resultado",
+								"value": {
+									"value": "El Nümero @{pipeline().parameters.Numero} es Impar",
+									"type": "Expression"
+								}
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "SetResultadoPar",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Resultado",
+								"value": {
+									"value": "El Número @{pipeline().parameters.Numero} es Par",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"Numero": {
+				"type": "int",
+				"defaultValue": 0
+			}
+		},
+		"variables": {
+			"Resultado": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Clase Asincronica"
+		},
+		"annotations": []
+	}
+}
