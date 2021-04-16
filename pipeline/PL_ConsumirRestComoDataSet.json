@@ -1,0 +1,9 @@
+{
+	"name": "PL_ConsumirRestComoDataSet",
+	"properties": {
+		"folder": {
+			"name": "Clase Asincronica"
+		},
+		"annotations": []
+	}
+}
