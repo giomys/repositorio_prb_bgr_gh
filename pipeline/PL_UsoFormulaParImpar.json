@@ -1,6 +1,31 @@
 {
 	"name": "PL_UsoFormulaParImpar",
 	"properties": {
+		"activities": [
+			{
+				"name": "Set Resultado Par Impar",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "resultado",
+					"value": {
+						"value": "@if (equals (mod (pipeline().parameters.numero,2), 0),\n            concat (pipeline().parameters.numero, 'Es Par'),\n            concat (pipeline().parameters.numero, 'Es Impar')\n    )",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"numero": {
+				"type": "int"
+			}
+		},
+		"variables": {
+			"resultado": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "Clase Asincronica"
 		},
