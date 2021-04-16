@@ -979,6 +979,47 @@
 				"[concat(variables('factoryId'), '/datasets/TBL_TableLectura')]",
 				"[concat(variables('factoryId'), '/pipelines/PL_copiaIncremental')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SC_CargaInicial')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_carga_rango_fechas",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Month",
+						"interval": 1,
+						"startTime": "2021-04-16T17:34:00",
+						"timeZone": "SA Pacific Standard Time",
+						"schedule": {
+							"minutes": [
+								45
+							],
+							"hours": [
+								17
+							],
+							"monthDays": [
+								16
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_carga_rango_fechas')]"
+			]
 		}
 	]
 }
