@@ -14,6 +14,19 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "SetFechaCorteOtroFormato",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FechaCorteOtroFormato",
+					"value": {
+						"value": "@formatDateTime(variables('FechaCorteVar'),'dd MMMM yyyy')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
@@ -23,6 +36,9 @@
 		},
 		"variables": {
 			"FechaCorteVar": {
+				"type": "String"
+			},
+			"FechaCorteOtroFormato": {
 				"type": "String"
 			}
 		},
