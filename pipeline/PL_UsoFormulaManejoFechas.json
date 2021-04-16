@@ -54,6 +54,26 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "SetFechaSumaPeriodo",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "SetFechaInicioMes",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FechaSumaPeriodo",
+					"value": {
+						"value": "@addToTime(variables('FechaInicioMes'),1,'Month')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
