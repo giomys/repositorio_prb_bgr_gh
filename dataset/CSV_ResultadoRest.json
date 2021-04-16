@@ -1,0 +1,24 @@
+{
+	"name": "CSV_ResultadoRest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_DataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "ConsultaRest.csv",
+				"folderPath": "Results",
+				"fileSystem": "aci-gaherrer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
