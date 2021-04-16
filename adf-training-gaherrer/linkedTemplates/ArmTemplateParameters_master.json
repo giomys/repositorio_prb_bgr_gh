@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-training-gaherrer"
+		},
+		"ls_DataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"ls_FileServerClase_password": {
+			"value": ""
+		},
+		"ls_SqlDatabaseNube_connectionString": {
+			"value": ""
+		},
+		"ls_SqlServerGH_connectionString": {
+			"value": ""
+		},
+		"ls_DataLakeStorage_properties_typeProperties_url": {
+			"value": "https://dlsfuturoinfonoprod.dfs.core.windows.net"
+		},
+		"ls_FileServerClase_properties_typeProperties_host": {
+			"value": "C:\\DataFactory"
+		},
+		"ls_FileServerClase_properties_typeProperties_userId": {
+			"value": "oscar.celin@gmail.com"
+		},
+		"ls_KeyVaultClase3_properties_typeProperties_baseUrl": {
+			"value": "https://kv-futuroinfo-noprod.vault.azure.net/"
+		},
+		"ls_RestService_properties_typeProperties_url": {
+			"value": "http://worldclockapi.com/api/json/utc/now"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

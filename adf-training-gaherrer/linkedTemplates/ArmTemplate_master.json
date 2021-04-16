@@ -1,0 +1,125 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-training-gaherrer"
+		},
+		"ls_DataLakeStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_DataLakeStorage'"
+		},
+		"ls_FileServerClase_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_FileServerClase'"
+		},
+		"ls_SqlDatabaseNube_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_SqlDatabaseNube'"
+		},
+		"ls_SqlServerGH_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_SqlServerGH'"
+		},
+		"ls_DataLakeStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dlsfuturoinfonoprod.dfs.core.windows.net"
+		},
+		"ls_FileServerClase_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\DataFactory"
+		},
+		"ls_FileServerClase_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "oscar.celin@gmail.com"
+		},
+		"ls_KeyVaultClase3_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-futuroinfo-noprod.vault.azure.net/"
+		},
+		"ls_RestService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "http://worldclockapi.com/api/json/utc/now"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-training-gaherrer_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_DataLakeStorage_accountKey": {
+						"value": "[parameters('ls_DataLakeStorage_accountKey')]"
+					},
+					"ls_SqlDatabaseNube_connectionString": {
+						"value": "[parameters('ls_SqlDatabaseNube_connectionString')]"
+					},
+					"ls_DataLakeStorage_properties_typeProperties_url": {
+						"value": "[parameters('ls_DataLakeStorage_properties_typeProperties_url')]"
+					},
+					"ls_KeyVaultClase3_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_KeyVaultClase3_properties_typeProperties_baseUrl')]"
+					},
+					"ls_RestService_properties_typeProperties_url": {
+						"value": "[parameters('ls_RestService_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf-training-gaherrer_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_FileServerClase_password": {
+						"value": "[parameters('ls_FileServerClase_password')]"
+					},
+					"ls_SqlServerGH_connectionString": {
+						"value": "[parameters('ls_SqlServerGH_connectionString')]"
+					},
+					"ls_FileServerClase_properties_typeProperties_host": {
+						"value": "[parameters('ls_FileServerClase_properties_typeProperties_host')]"
+					},
+					"ls_FileServerClase_properties_typeProperties_userId": {
+						"value": "[parameters('ls_FileServerClase_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-training-gaherrer_ArmTemplate_0')]"
+			]
+		}
+	]
+}
