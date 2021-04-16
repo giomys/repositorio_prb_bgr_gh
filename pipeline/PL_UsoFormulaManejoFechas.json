@@ -1,0 +1,31 @@
+{
+	"name": "PL_UsoFormulaManejoFechas",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"variables": {
+			"FechaActual": {
+				"type": "String"
+			},
+			"FechaInicioMes": {
+				"type": "String"
+			},
+			"FechaFormatoPerzonalizado": {
+				"type": "String"
+			},
+			"FechaSumaPeriodo": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Clase Asincronica"
+		},
+		"annotations": []
+	}
+}
