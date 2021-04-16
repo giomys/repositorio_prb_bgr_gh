@@ -14,13 +14,73 @@
 					},
 					"cases": [
 						{
-							"value": "A"
+							"value": "A",
+							"activities": [
+								{
+									"name": "SetSuma",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "Mensaje",
+										"value": {
+											"value": "@string (add(pipeline().parameters.Numero1, pipeline().parameters.Numero2) )",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						},
 						{
-							"value": "B"
+							"value": "B",
+							"activities": [
+								{
+									"name": "SetMultiplicacion",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "Mensaje",
+										"value": {
+											"value": "@string (mul(pipeline().parameters.Numero1, pipeline().parameters.Numero2) )",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						},
 						{
-							"value": "C"
+							"value": "C",
+							"activities": [
+								{
+									"name": "SetDivision",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "Mensaje",
+										"value": {
+											"value": "@string (div(pipeline().parameters.Numero1, pipeline().parameters.Numero2) )",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					],
+					"defaultActivities": [
+						{
+							"name": "SetDefault",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Mensaje",
+								"value": {
+									"value": "Valor por defecto",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
