@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "SELECT nombres as nombre1, apellidos as apellido1 FROM dbo.IntegrantesF",
+						"sqlReaderQuery": "SELECT ID AS ID1, NOMBRES AS NOMBRE1, \n  APELLIDOS AS APELLIDO1, EDAD AS EDAD1,\n  ALIAS_FAMILIA AS ALIAS\n  FROM DBO.IntegrantesF",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -30,7 +30,19 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "nombre1",
+									"name": "ID1",
+									"type": "String",
+									"physicalType": "nchar"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String",
+									"physicalType": "nchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NOMBRE1",
 									"type": "String",
 									"physicalType": "nchar"
 								},
@@ -42,7 +54,7 @@
 							},
 							{
 								"source": {
-									"name": "apellido1",
+									"name": "APELLIDO1",
 									"type": "String",
 									"physicalType": "nchar"
 								},
@@ -53,13 +65,11 @@
 								}
 							},
 							{
-								"sink": {
-									"name": "apellidos",
-									"type": "String",
-									"physicalType": "nchar"
-								}
-							},
-							{
+								"source": {
+									"name": "EDAD1",
+									"type": "Int32",
+									"physicalType": "int"
+								},
 								"sink": {
 									"name": "edad",
 									"type": "Int32",
@@ -67,6 +77,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ALIAS",
+									"type": "String",
+									"physicalType": "nchar"
+								},
 								"sink": {
 									"name": "alias_familia",
 									"type": "String",
