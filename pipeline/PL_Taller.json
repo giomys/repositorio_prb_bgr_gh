@@ -24,7 +24,8 @@
 					"dataset": {
 						"referenceName": "TBL_TableLectura",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
