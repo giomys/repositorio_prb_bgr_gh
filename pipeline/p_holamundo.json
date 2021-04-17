@@ -18,6 +18,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "Clase3"
+		},
 		"annotations": []
 	}
 }
