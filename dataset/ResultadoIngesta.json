@@ -5,13 +5,27 @@
 			"referenceName": "ls_DataLakeStorage",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tabla": {
+				"type": "string"
+			},
+			"esquema": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "ResultadoIngesta.csv",
-				"folderPath": "Taller",
+				"fileName": {
+					"value": "@{dataset().tabla}.cvs",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "Taller/@{dataset().esquema}/@{dataset().tabla}",
+					"type": "Expression"
+				},
 				"fileSystem": "aci-gaherrer"
 			},
 			"columnDelimiter": ",",
