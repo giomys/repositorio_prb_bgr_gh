@@ -1,0 +1,23 @@
+{
+	"name": "ResultadoIngesta",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_DataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "ResultadoIngesta.csv",
+				"folderPath": "Taller",
+				"fileSystem": "aci-gaherrer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
