@@ -75,7 +75,7 @@
 													"source": {
 														"type": "AzureSqlSource",
 														"sqlReaderQuery": {
-															"value": "@activity('Lockup Ingesta').output.consulta",
+															"value": "@item().consulta",
 															"type": "Expression"
 														},
 														"queryTimeout": "02:00:00",
