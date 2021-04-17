@@ -183,7 +183,21 @@
 												"outputs": [
 													{
 														"referenceName": "ResultadoHistory",
-														"type": "DatasetReference"
+														"type": "DatasetReference",
+														"parameters": {
+															"FechaCorte": {
+																"value": "@pipeline().parameters.FechaCorte",
+																"type": "Expression"
+															},
+															"tabla": {
+																"value": "@item().tabla",
+																"type": "Expression"
+															},
+															"esquema": {
+																"value": "@item().esquema",
+																"type": "Expression"
+															}
+														}
 													}
 												]
 											}
@@ -196,6 +210,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"FechaCorte": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "TallerPractico"
 		},
