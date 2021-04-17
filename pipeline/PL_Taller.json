@@ -60,7 +60,7 @@
 										"value": "stock",
 										"activities": [
 											{
-												"name": "Copy data1",
+												"name": "CopyStock",
 												"type": "Copy",
 												"dependsOn": [],
 												"policy": {
@@ -74,6 +74,10 @@
 												"typeProperties": {
 													"source": {
 														"type": "AzureSqlSource",
+														"sqlReaderQuery": {
+															"value": "@activity('Lockup Ingesta').output.consulta",
+															"type": "Expression"
+														},
 														"queryTimeout": "02:00:00",
 														"partitionOption": "None"
 													},
