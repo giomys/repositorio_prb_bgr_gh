@@ -51,6 +51,10 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
+								"on": {
+									"value": "Valor por default",
+									"type": "Expression"
+								},
 								"cases": [
 									{
 										"value": "stock",
