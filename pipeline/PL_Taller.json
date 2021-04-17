@@ -53,7 +53,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"on": {
-									"value": "Valor por default",
+									"value": "@item().tipoTabla",
 									"type": "Expression"
 								},
 								"cases": [
