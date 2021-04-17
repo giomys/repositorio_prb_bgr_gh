@@ -8,6 +8,9 @@
 				"pipelineReference": {
 					"referenceName": "PL_Taller",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"FechaCorte": "2009-10-31"
 				}
 			}
 		],
@@ -20,7 +23,7 @@
 				"timeZone": "SA Pacific Standard Time",
 				"schedule": {
 					"minutes": [
-						20
+						22
 					],
 					"hours": [
 						12
