@@ -26,6 +26,43 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lockup Ingesta",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@array(activity('Lockup Ingesta').output)",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Switch1",
+							"type": "Switch",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"cases": [
+									{
+										"value": "stock"
+									},
+									{
+										"value": "history"
+									}
+								]
+							}
+						}
+					]
+				}
 			}
 		],
 		"folder": {
