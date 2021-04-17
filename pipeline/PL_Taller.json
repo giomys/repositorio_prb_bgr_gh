@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ConsultaIngesta",
-				"type": "Copy",
+				"name": "Lockup Ingesta",
+				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -21,39 +21,11 @@
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
-					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
+					"dataset": {
 						"referenceName": "TBL_TableLectura",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "ResultadoIngesta",
-						"type": "DatasetReference"
-					}
-				]
+				}
 			}
 		],
 		"folder": {
