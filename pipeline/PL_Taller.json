@@ -111,7 +111,17 @@
 												"outputs": [
 													{
 														"referenceName": "ResultadoIngesta",
-														"type": "DatasetReference"
+														"type": "DatasetReference",
+														"parameters": {
+															"tabla": {
+																"value": "@item().tabla",
+																"type": "Expression"
+															},
+															"esquema": {
+																"value": "@item().esquema",
+																"type": "Expression"
+															}
+														}
 													}
 												]
 											}
