@@ -957,6 +957,9 @@
 						]
 					}
 				],
+				"folder": {
+					"name": "Clase1"
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -1220,6 +1223,9 @@
 						]
 					}
 				],
+				"folder": {
+					"name": "Clase1"
+				},
 				"annotations": []
 			},
 			"dependsOn": [
